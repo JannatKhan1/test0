@@ -1,8 +1,8 @@
-import {  useNavigate } from "react-router-dom"
+import {  useNavigate,Link } from "react-router-dom"
 import {FaSignOutAlt} from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
 import { logout } from '../features/admin/adminSlice'
-import BackButton from "./BackButton"
+
 
 function AdminHeader() {
     const navigate = useNavigate()
@@ -13,8 +13,10 @@ function AdminHeader() {
         navigate('/')
     }
     return(
-        <header className='header'style={{marginBottom:'0px'}}>
-        <BackButton url='/'/>
+        <header className='header'>
+        <div className='logo' style={{color: '#8800cc'}}>
+            <Link to='/'>Support Desk</Link>
+        </div>
         <ul>
             <li>
                 <button className='btn' onClick={onLogout}>

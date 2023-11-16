@@ -5,7 +5,7 @@ import { GrUserAdmin } from 'react-icons/gr'
 import { useSelector, useDispatch } from 'react-redux'
 import { register } from '../features/admin/adminSlice'
 import Spinner from '../components/Spinner'
-import Header from '../components/Header'
+import HeaderBack from '../components/HeaderBack'
 
 function AdminRegister() {
   const [formData, setFormData] = useState({
@@ -59,7 +59,8 @@ function AdminRegister() {
 
   return (
     <>
-    <Header/>
+    <HeaderBack/>
+    <div className="pageContainer">
       <section className='heading'>
         <h1>
           <GrUserAdmin /> Register
@@ -122,6 +123,7 @@ function AdminRegister() {
           </div>
         </form>
       </section>
+      </div>
     </>
   )
 }

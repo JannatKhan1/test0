@@ -5,7 +5,7 @@ import { FaUser } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { register } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
-import Header from '../components/Header'
+import HeaderBack from '../components/HeaderBack'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -66,7 +66,9 @@ function Register() {
 
   return (
     <>
-      <Header/>
+      <HeaderBack/>
+
+      <div className="pageContainer">
       <section className='heading'>
         <h1>
           <FaUser /> Register
@@ -129,6 +131,7 @@ function Register() {
           </div>
         </form>
       </section>
+      </div>
     </>
   )
 }

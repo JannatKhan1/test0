@@ -5,7 +5,7 @@ import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { login } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
-import Header from '../components/Header'
+import HeaderBack from '../components/HeaderBack'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -59,7 +59,8 @@ function Login() {
 
   return (
     <>
-    <Header/>
+    <HeaderBack/>
+    <div class="pageContainer">
       <section className='heading'>
         <h1>
           <FaSignInAlt /> Login
@@ -98,6 +99,7 @@ function Login() {
           </div>
         </form>
       </section>
+      </div>
     </>
   )
 }

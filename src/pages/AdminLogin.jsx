@@ -5,7 +5,7 @@ import {RiAdminFill} from 'react-icons/ri'
 import { useSelector, useDispatch } from 'react-redux'
 import { login } from '../features/admin/adminSlice'
 import Spinner from '../components/Spinner'
-import Header from '../components/Header'
+import HeaderBack from '../components/HeaderBack'
 
 function AdminLogin() {
   const [formData, setFormData] = useState({
@@ -61,11 +61,16 @@ function AdminLogin() {
 
   return (
     <>
-    <Header/>
+    <HeaderBack/>
+    <div className="pageContainer">
       <section className='heading'>
         <h1>
           <RiAdminFill /> Admin Login
         </h1>
+
+        <p style={{ color: 'red', textDecoration: "underline" }} >
+          Only admins can access this page!
+        </p>
     
       </section>
 
@@ -112,6 +117,7 @@ function AdminLogin() {
           </div>
         </form>
       </section>
+      </div>
     </>
   )
 }

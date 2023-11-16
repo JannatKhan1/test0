@@ -5,7 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../features/auth/authSlice'
 
-function Header() {
+
+function HeaderBack() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
@@ -15,14 +16,17 @@ function Header() {
     dispatch(logout())
     navigate('/')
   }
-
+ 
   return (
     <header className='header'>
-      <div className='logo' style={{ color: '#550073', fontWeight: 'bold' }}>
-        <Link to='/'>Support Desk</Link>
-      </div>
+     <div className='logo' style={{ color: '#550073', fontWeight: 'bold' }}>
+ 
+ 
+  <Link to='/'>Support Desk</Link>
+ 
+</div>
       <ul>
-        {user ? (
+    {user ? (
           <li>
             <button className='btn' onClick={onLogout}>
               <FaSignOutAlt /> Logout
@@ -57,4 +61,4 @@ function Header() {
   )
 }
 
-export default Header
+export default HeaderBack
