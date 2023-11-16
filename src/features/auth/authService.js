@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://bs-ho-ja.onrender.com/api/users/'
+const API_URL = 'https://ticket-support-system-backend-6.onrender.com/api/users/'
 
 // Register user
 const register = async (userData) => {
