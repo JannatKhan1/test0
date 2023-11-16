@@ -47,7 +47,7 @@ function AdminRegister() {
         .unwrap()
         .then((admin) => {
           toast.success(`Registered new admin - ${admin.name}`)
-          navigate('/admin-resolve')
+          navigate('/admin-login')
         })
         .catch(toast.error)
     }
