@@ -5,7 +5,7 @@ import { GrUserAdmin } from 'react-icons/gr'
 import { useSelector, useDispatch } from 'react-redux'
 import { register } from '../features/admin/adminSlice'
 import Spinner from '../components/Spinner'
-import HeaderBack from '../components/HeaderBack'
+import Header from '../components/Header'
 
 function AdminRegister() {
   const [formData, setFormData] = useState({
@@ -14,26 +14,18 @@ function AdminRegister() {
     password: '',
     password2: '',
   })
-
   const { name, email, password, password2 } = formData
-
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   const { isLoading } = useSelector((state) => state.auth)
-
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))
   }
-
-
-
   const onSubmit = (e) => {
     e.preventDefault()
-
     if (password !== password2) {
       toast.error('Passwords do not match')
     } else {
@@ -42,7 +34,6 @@ function AdminRegister() {
         email,
         password,
       }
-
       dispatch(register(adminData))
         .unwrap()
         .then((admin) => {
@@ -52,22 +43,19 @@ function AdminRegister() {
         .catch(toast.error)
     }
   }
-
   if (isLoading) {
     return <Spinner />
   }
 
   return (
     <>
-    <HeaderBack/>
-    <div className="pageContainer">
+    <Header/>
       <section className='heading'>
         <h1>
-          <GrUserAdmin /> Register
+          <GrUserAdmin /> Register 
         </h1>
         <p>Please create an account</p>
       </section>
-
       <section className='form'>
         <form onSubmit={onSubmit}>
           <div className='form-group'>
@@ -123,9 +111,8 @@ function AdminRegister() {
           </div>
         </form>
       </section>
-      </div>
     </>
   )
 }
-
+ 
 export default AdminRegister

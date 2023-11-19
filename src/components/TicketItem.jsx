@@ -30,7 +30,7 @@ function TicketItem({ ticket }) {
           View
         </Link>
         {ticket.status !== 'closed' &&
-          <Link to={`/update-ticket/${ticket._id}`} className='btn btn-reverse btn-sm'>
+          <Link to={`/update-ticket/${ticket._id}`} className='btn btn-reverse btn-sm' style={{backgroundColor:'yellow'}}>
             Edit
           </Link>
         }

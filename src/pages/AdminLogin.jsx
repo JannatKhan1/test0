@@ -5,7 +5,7 @@ import {RiAdminFill} from 'react-icons/ri'
 import { useSelector, useDispatch } from 'react-redux'
 import { login } from '../features/admin/adminSlice'
 import Spinner from '../components/Spinner'
-import HeaderBack from '../components/HeaderBack'
+import Header from '../components/Header'
 
 function AdminLogin() {
   const [formData, setFormData] = useState({
@@ -13,36 +13,28 @@ function AdminLogin() {
     password: '',
     key: ''
   })
-
   const { email, password, key } = formData
-
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   const { isLoading } = useSelector((state) => state.auth)
-
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))
   }
-
   // NOTE: no need for useEffect here as we can catch the
   // AsyncThunkAction rejection in our onSubmit or redirect them on the
   // resolution
   // Side effects shoulld go in event handlers where possible
   // source: - https://beta.reactjs.org/learn/keeping-components-pure#where-you-can-cause-side-effects
-
   const onSubmit = (e) => {
     e.preventDefault()
-
     const adminData = {
       email,
       password,
       key
     }
-
     dispatch(login(adminData))
       .unwrap()
       .then((admin) => {
@@ -54,15 +46,13 @@ function AdminLogin() {
       })
       .catch(toast.error)
   }
-
   if (isLoading) {
     return <Spinner />
   }
 
   return (
     <>
-    <HeaderBack/>
-    <div className="pageContainer">
+    <Header/>
       <section className='heading'>
         <h1>
           <RiAdminFill /> Admin Login
@@ -71,9 +61,8 @@ function AdminLogin() {
         <p style={{ color: 'red', textDecoration: "underline" }} >
           Only admins can access this page!
         </p>
-    
-      </section>
 
+      </section>  
       <section className='form'>
         <form onSubmit={onSubmit}>
           <div className='form-group'>
@@ -117,9 +106,8 @@ function AdminLogin() {
           </div>
         </form>
       </section>
-      </div>
     </>
   )
 }
-
+ 
 export default AdminLogin

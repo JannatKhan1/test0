@@ -10,15 +10,15 @@
   display: flex;
 }
 
-
+.button-container > a {
+  margin-right: 10px; /* Adjust as needed for spacing between buttons */
+}
 
 
 
 body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
- /* background-image: url('./assets/bg-img.jpg'); */
-
   background-color: rgb(194, 238, 255);
 }
 
@@ -27,7 +27,9 @@ a {
   color: #000;
 }
 
-
+p {
+  line-height: 1.7;
+}
 
 ul {
   list-style: none;
@@ -46,27 +48,20 @@ h3 {
 
 .container {
   width: 100%;
-  max-width: 100%;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
 }
 
-.btn-back-nav{
-  font-size: 18px;
-  margin-right: 10px;
-
-}
 .header {
-  background-color: whitesmoke;
+  background-color: rgb(181, 228, 252);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px ;
   border-bottom: 1px solid rgb(207, 172, 172);
   margin-bottom:  60px;
-  width: 100%;
-
 }
 
 
@@ -94,119 +89,17 @@ h3 {
   margin-right: 5px;
 }
 
+
 .heading {
   font-size: 2rem;
   font-weight: 700;
   padding: 0 20px;
-  text-align: left;
+
 }
 
 .heading p {
   color: #828282;
-  font-size: 25px;
-  text-align: left;
-  padding-bottom: 50px;
 }
-
-
-
-.combinedSection{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 100px;
-
-  
-}
-
-.btn {
-  text-decoration: none;
-  display: block;
-  margin-top: 15px;
-  padding: 10px;
-  text-align: center;
-  border-radius: 25px; /* Increased border-radius for a rounder look */
-  transition: background-color 0.3s ease;
-  font-weight: bold; /* Make the text bold */
-}
-
-.btn-reverse {
-  background-color: #007bff; /* Blue color */
-  color: #fff; /* White text */
-}
-
-.btn-block {
-  background-color: #007bff; /* Blue color */
-  color: #fff; /* White text */
-  border: 1px solid #007bff; /* Matching border color */
-}
-
-.btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
-.homeImage {
-  width: 100%; /* Adjust the width as needed */
-  height: auto; /* Maintain the aspect ratio */
-}
-
-.homeImage img {
-  width: 100%; /* Make the image fill the container width */
-  height: auto; /* Maintain the aspect ratio */
-}
-
-.mega {
-  display: flex;
-}
-
-.box1 {
-  
-  flex: 1; /* Take up remaining space in the container */
-  padding: 20px; /* Adjust padding as needed */
-  background-color: rgb(194, 238, 255);
-  border-right: none;
-}
-
-.box2 {
-  flex: 1; /* Take up remaining space in the container */
-  
-}
-
-/*
-css new classes for NewTicket.jsx
-*/
-
-.mainContainer{
-  margin: 40px; 
-}
-
-.newTicketTop h1 {
-  margin-top: 20px;
-  padding-left: 70px;
-}
-.newTicketTop p {
-  padding-left: 70px;
-}
-
-
-.avatar img {
-  width: 265px;
-  height: 265px;
-  border-radius: 50%; /* Make the image round */
-  border: 2px solid #fff; /* Add a border for better visibility */
-}
-
-/* Place the avatar on the right side of the page */
-.avatar {
-  display: block;
-  top: 20px;
-  
-  margin-left: 35%;
-}
-
-
-
 
 .boxes {
   display: grid;
@@ -233,6 +126,11 @@ css new classes for NewTicket.jsx
 }
 
 .form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form {
   max-width: 1000px;
   margin: 25px auto;
   background-color: rgb(132, 198, 231);
@@ -242,11 +140,11 @@ css new classes for NewTicket.jsx
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-
 .form-group input,
+.form-group textarea,
 .form-group select {
   width: 100%;
   padding: 10px;
@@ -254,21 +152,19 @@ css new classes for NewTicket.jsx
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit;
-} 
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 5px;
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+  font-weight: bold;
+  margin: 0 0 5px 3px;
 }
 
 .form-group .btn-block  {
   width: 100%;
   padding: 10px;
   background-color: #007bff;
- 
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -276,36 +172,29 @@ textarea {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
-
-.form-group label {
-  text-align: left;
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
 .btn {
-  width: 70%;
+  margin-top: 15px;
   padding: 10px 20px;
   border: 1px solid #000;
-  border-radius: 55px;
+  border-radius: 25px;
   background: #000;
+  color: #fff;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: bold;
   cursor: pointer;
   text-align: center;
   appearance: button;
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
+
+.btn svg {
+  margin-right: 8px;
+}
+
 .btn-reverse {
-  background-color: #3889df; /* Blue color */
+  background-color: #007bff; /* Blue color */
   color: #fff; /* White text */
 }
 
@@ -313,23 +202,6 @@ button:hover {
   background-color: #007bff; /* Blue color */
   color: #fff; /* White text */
   border: 1px solid #007bff; /* Matching border color */
-}
-
-.btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
-.btn svg {
-  margin-right: 8px;
-}
-
-/*
-.btn-reverse {
-  background: #fff;
-  color: #000;
-}
-
-.btn-block {
   width: 100%;
   margin-bottom: 40px;
 }
@@ -352,7 +224,7 @@ button:hover {
 .btn:hover {
   transform: scale(0.98);
 }
-*/
+
 .ticket-created {
   border: 1px solid #e6e6e6;
   border-radius: 5px;
@@ -421,6 +293,21 @@ button:hover {
   background-color: darkred;
   color: #fff;
   border-radius: 10px;
+}
+
+.satus-new {
+ color: green;
+ font-weight: bold;
+}
+
+.satus-open {
+  color:chocolate;
+  font-weight: bold;
+}
+
+.satus-closed {
+ color: darkred;
+ font-weight: bold;
 }
 
 .ticket-page {
@@ -496,6 +383,8 @@ button:hover {
   cursor: pointer;
 }
 
+
+
 .btn-close:hover {
   color: red;
   transform: scale(0.98);
@@ -545,12 +434,7 @@ footer {
   animation: spin 1.2s linear infinite;
 }
 
-.pageContainer{
-  width: 50%;
-  height: auto;
-  margin: auto;
 
-}
 
 @keyframes spin {
   0% {
@@ -578,18 +462,4 @@ footer {
   .heading p {
     font-size: 1.5rem;
   }
-}
-
-.satus-new {
-  color: green;
-
-}
-
-.satus-open {
-  color: steelblue;
-}
-
-.satus-closed {
-  color: darkred;
- 
 }

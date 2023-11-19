@@ -4,6 +4,8 @@ import {RiAdminFill} from 'react-icons/ri'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../features/auth/authSlice'
+import BackButton from '../components/BackButton' //changed just now
+
 
 function Header() {
   const navigate = useNavigate()
@@ -15,16 +17,18 @@ function Header() {
     dispatch(logout())
     navigate('/')
   }
-
+ 
   return (
-    <header className='header'>
-      <div className='logo' style={{ color: '#550073', fontWeight: 'bold' }}>
-        <Link to='/'>Support Desk</Link>
-      </div>
+    <header className='header' >
+     <div className='logo' style={{ color: '#550073', fontWeight: 'bold' }}>
+ 
+  <Link to='/'>Support Desk</Link>
+ 
+</div>
       <ul>
-        {user ? (
+    {user ? (
           <li>
-            <button className='btn' onClick={onLogout}>
+            <button className='btn btn-reverse' onClick={onLogout}>
               <FaSignOutAlt /> Logout
             </button>
           </li>

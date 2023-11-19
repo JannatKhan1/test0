@@ -5,39 +5,32 @@ import { FaUser } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { register } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
-import HeaderBack from '../components/HeaderBack'
+import Header from '../components/Header'
 
 function Register() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({  
     name: '',
     email: '',
     password: '',
     password2: '',
   })
-
   const { name, email, password, password2 } = formData
-
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   const { isLoading } = useSelector((state) => state.auth)
-
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))
   }
-
   // NOTE: no need for useEffect here as we can catch the
   // AsyncThunkAction rejection in our onSubmit or redirect them on the
   // resolution
   // Side effects shoulld go in event handlers where possible
   // source: - https://beta.reactjs.org/learn/keeping-components-pure#where-you-can-cause-side-effects
-
   const onSubmit = (e) => {
     e.preventDefault()
-
     if (password !== password2) {
       toast.error('Passwords do not match')
     } else {
@@ -46,7 +39,6 @@ function Register() {
         email,
         password,
       }
-
       dispatch(register(userData))
         .unwrap()
         .then((user) => {
@@ -59,23 +51,19 @@ function Register() {
         .catch(toast.error)
     }
   }
-
   if (isLoading) {
     return <Spinner />
   }
 
   return (
     <>
-      <HeaderBack/>
-
-      <div className="pageContainer">
+      <Header/>
       <section className='heading'>
         <h1>
           <FaUser /> Register
         </h1>
         <p>Please create an account</p>
       </section>
-
       <section className='form'>
         <form onSubmit={onSubmit}>
           <div className='form-group'>
@@ -131,9 +119,9 @@ function Register() {
           </div>
         </form>
       </section>
-      </div>
     </>
   )
 }
-
+   
+  
 export default Register

@@ -7,7 +7,6 @@ import { logout } from '../features/admin/adminSlice'
 function AdminHeader() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-
     const onLogout = () => {
         dispatch(logout())
         navigate('/')
@@ -19,13 +18,12 @@ function AdminHeader() {
         </div>
         <ul>
             <li>
-                <button className='btn' onClick={onLogout}>
+                <button className='btn btn-reverse' onClick={onLogout}>
                 <FaSignOutAlt /> Logout
                 </button>
             </li>
         </ul>
-        </header>
+        </header> 
     )
 }
-
 export default AdminHeader
