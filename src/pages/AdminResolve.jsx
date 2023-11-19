@@ -37,7 +37,7 @@ function AdminResolve() {
     <>
       <AdminHeader/>
       <h1>Tickets</h1>
-      <table style={{ width:'100%', borderCollapse:'collapse'}}>
+      <table style={{ width:'100%', borderCollapse:'collapse' }}>
       <thead style={{ backgroundColor: "#f0f0f0", textAlign: "center", padding: "20px" }}>
         <tr>
           <th>User Name</th>
